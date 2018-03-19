@@ -80,11 +80,13 @@ composer require google/apiclient:^2.0
 
 ### Auth for api access with a service account
 From the google api client.php file:
+```
 // These conditionals represent the decision tree for authentication
 //   1.  Check for Application Default Credentials
 //   2.  Check for API Key
 //   3a. Check for an Access Token
 //   3b. If access token exists but is expired, try to refresh it
+```
 https://cloud.google.com/docs/authentication/getting-started
 https://cloud.google.com/iam/docs/understanding-service-accounts
 https://cloud.google.com/datastore/docs/reference/libraries#setting_up_authentication
