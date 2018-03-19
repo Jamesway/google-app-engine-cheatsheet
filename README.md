@@ -86,6 +86,8 @@ https://cloud.google.com/docs/authentication/production#providing_credentials_to
 
 PHP: https://developers.google.com/api-client-library/php/start/get_started
 I added a .gitignored .secrets dir and pass the file into the environment using docker-compose
+
+docker-compose.yml
 ```
 #app engine service credentials path
 - GOOGLE_CLOUD_PROJECT=appengineId
