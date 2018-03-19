@@ -87,12 +87,15 @@ https://cloud.google.com/docs/authentication/production#providing_credentials_to
 PHP: https://developers.google.com/api-client-library/php/start/get_started
 I added a .gitignored .secrets dir and pass the file into the environment using docker-compose
 
-docker-compose.yml
 ```
+docker-compose.yml
+...
 #app engine service credentials path
 - GOOGLE_CLOUD_PROJECT=appengineId
+
 #relative to php-fpm volume
 - GOOGLE_APPLICATION_CREDENTIALS=/var/www/.secrets/gae_api_service_creds.json
+...
 ```
 
 Once you have access to the apis you can use the apis to interact with user data, BUT you need user authorization  to get a refresh/access token
