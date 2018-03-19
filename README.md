@@ -90,11 +90,12 @@ I added a .gitignored .secrets dir and pass the file into the environment using 
 ```
 docker-compose.yml
 ...
-#app engine service credentials path
-- GOOGLE_CLOUD_PROJECT=appengineId
+environment:
+  #app engine service credentials path
+  - GOOGLE_CLOUD_PROJECT=appengineId
 
-#relative to php-fpm volume
-- GOOGLE_APPLICATION_CREDENTIALS=/var/www/.secrets/gae_api_service_creds.json
+  #relative to php-fpm volume
+  - GOOGLE_APPLICATION_CREDENTIALS=/var/www/.secrets/gae_api_service_creds.json
 ...
 ```
 
