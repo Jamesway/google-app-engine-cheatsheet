@@ -1,29 +1,3 @@
-## Using Google Apis in App Engine
-
-One of the benefits of running in gae is that you don't have to do the oauth2 step when accessing google apis. This is helpful if you want to store secrets in google cloud datastore, so you don't have to pass them app.yaml and expose them to version control.
-
-Docs for Google Cloud are a little "spread out"
-
-```
-eg getting a json string of secrets from cloud datastore
-
-class SecretStore
-{
-
-    const GCDS_KIND = 'somekind';
-    const GCDS_ID = 'someid';
-
-    public static function initEnvVars() {
-
-        $datastore = new DatastoreClient(['projectId' => $_ENV['GOOGLE_CLOUD_PROJECT']]);
-
-        $key = $datastore->key(self::GCDS_KIND, self::GCDS_ID);
-
-        return $datastore->lookup($key);
-    }
-}
-```
-
 ### gcloud cli commands
 ```
 # available projects
@@ -146,6 +120,9 @@ If you only want certain fields back from Users.messages.get() use "metadata"
 ```
 "metadata": Returns only email message ID, labels, and email headers.
 ```
+
+GmailApi message body is base64url encoded  
+https://developers.google.com/gmail/api/v1/reference/users/messages/get#request
 
 **BUT**  
 
