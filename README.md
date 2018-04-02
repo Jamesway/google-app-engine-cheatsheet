@@ -54,6 +54,8 @@ Please enter your numeric choice:
 ```
 
 ### Useful links
+https://cloud.google.com/datastore/docs/concepts/entities
+
 https://cloud.google.com/appengine/docs/flexible/php/runtime
 
 https://cloud.google.com/sdk/gcloud/reference/app/deploy
@@ -66,6 +68,18 @@ https://cloud.google.com/appengine/docs/flexible/php/using-cloud-datastore
 
 https://cloud.google.com/community/tutorials/run-laravel-on-appengine-flexible
 
+https://developers.google.com/gmail/api/v1/reference/users/messages/list
+https://developers.google.com/gmail/api/v1/reference/users/history/list
+
+https://developers.google.com/gmail/api/guides/push
+
+https://developers.google.com/gmail/api/guides/sync
+
+https://developers.google.com/gmail/api/guides/filter_settings#actions
+
+https://cloud.google.com/appengine/docs/flexible/php/runtime#customizing_nginx
+
+https://developers.google.com/api-client-library/php/guide/batch
 
 ### Enable billing for a project
 Go to the Google Cloud Platform Console.
@@ -87,6 +101,8 @@ From the google api client.php file:
 //   3a. Check for an Access Token
 //   3b. If access token exists but is expired, try to refresh it
 ```
+https://developers.google.com/analytics/devguides/reporting/core/v3/quickstart/web-php
+https://developers.google.com/gmail/api/quickstart/php
 https://cloud.google.com/docs/authentication/getting-started
 https://cloud.google.com/iam/docs/understanding-service-accounts
 https://cloud.google.com/datastore/docs/reference/libraries#setting_up_authentication
@@ -122,3 +138,18 @@ https://googlecloudplatform.github.io/google-cloud-php/#/docs/cloud-datastore/v1
 ### Docker images - app engine
 I'd like to use my own vanilla based images with app_engine, but if I end up jumping through too many hoops and I decide to use app_engine images, I can pull these:
 https://console.cloud.google.com/gcr/images/google-appengine?project=google-appengine
+
+
+
+### Gmail API metadata - header names
+If you only want certain fields back from Users.messages.get() use "metadata"
+```
+"metadata": Returns only email message ID, labels, and email headers.
+```
+
+**BUT**  
+
+I couldn't find a list of header names. Turns out, you can see them by using the api form on the right
+
+requires a gmail message id and oauth2 permission for the api to execute on said account
+https://developers.google.com/gmail/api/v1/reference/users/messages/get
