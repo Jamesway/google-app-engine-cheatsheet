@@ -31,6 +31,10 @@ Please enter your numeric choice:
 -------------------------------
 ```
 
+### Stop running instance
+App Engine -> Versions -> select instance verstion and click stop
+
+
 ### SSH
 get the gcloud ssh command from the console page  
 App Engine -> Instances -> SSH -> "View gcloud command"
