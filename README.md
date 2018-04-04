@@ -1,5 +1,9 @@
 ### gcloud cli commands
 ```
+# deploy
+gcloud app deploy
+gcloud app deploy --project [project_id]
+
 # available projects
 gcloud projects list
 
@@ -25,6 +29,18 @@ Pick configuration to use:
  [2] Create a new configuration
 Please enter your numeric choice:
 -------------------------------
+```
+
+### SSH
+get the gcloud ssh command from the console page  
+App Engine -> Instances -> SSH -> "View gcloud command"
+SSH'ing into a running app, logs you into the container host
+```
+# list the running containers
+docker ps
+
+#shell into a running app container (has the really long image name)
+docker exec -it [container_id] /bin/bash
 ```
 
 ### Useful links
